@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tools House</title>
+</head>
+<body>
+  <h1>Welcome to Tools House</h1>
+  <p>Your digital toolbox.</p>
+</body>
+</html>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The tools web - Discover the Best Web Tools & Resources</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .category-pill {
+            transition: all 0.3s ease;
+        }
+        
+        .category-pill:hover {
+            transform: scale(1.05);
+        }
+        
+        .category-pill.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .badge-free {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        }
+        
+        .badge-paid {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .badge-freemium {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        .tool-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        
+        .search-bar {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-6 sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4">
+            <nav class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-honeycomb text-3xl"></i>
+                    <h1 class="text-2xl font-bold">ToolHive</h1>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#" class="hover:text-purple-200 transition">Home</a>
+                    <a href="#categories" class="hover:text-purple-200 transition">Categories</a>
+                    <a href="#tools" class="hover:text-purple-200 transition">Tools</a>
+                    <a href="#about" class="hover:text-purple-200 transition">About</a>
+                </div>
+                <button class="bg-white text-purple-600 px-6 py-2 rounded-full font-semibold hover:bg-purple-100 transition">
+                    Submit Tool
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 w-72 h-72 bg-white rounded-full floating"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-white rounded-full floating" style="animation-delay: 1s;"></div>
+        </div>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h2 class="text-5xl md:text-6xl font-bold mb-6 fade-in">Discover Amazing Web Tools</h2>
+            <p class="text-xl md:text-2xl mb-10 text-purple-100 fade-in">Curated collection of the best free and paid tools for creators, developers, and businesses</p>
+            
+            <!-- Search Bar -->
+            <div class="max-w-3xl mx-auto search-bar rounded-full shadow-2xl p-2 flex items-center fade-in">
+                <i class="fas fa-search text-gray-400 ml-6"></i>
+                <input 
+                    type="text" 
+                    id="searchInput"
+                    placeholder="Search tools, categories, or features..." 
+                    class="flex-1 px-6 py-4 bg-transparent outline-none text-gray-800 text-lg"
+                >
+                <button class="gradient-bg text-white px-8 py-3 rounded-full font-semibold hover:opacity-90 transition">
+                    Search
+                </button>
+            </div>
+            
+            <div class="mt-10 flex flex-wrap justify-center gap-4">
+                <span class="bg-white bg-opacity-20 backdrop-blur px-4 py-2 rounded-full text-sm">🎨 Video Editing</span>
+                <span class="bg-white bg-opacity-20 backdrop-blur px-4 py-2 rounded-full text-sm">🎮 Gaming</span>
+                <span class="bg-white bg-opacity-20 backdrop-blur px-4 py-2 rounded-full text-sm">🎬 Video Generation</span>
+                <span class="bg-white bg-opacity-20 backdrop-blur px-4 py-2 rounded-full text-sm">🎵 Audio Tools</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h3 class="text-4xl font-bold text-center mb-4 text-gray-800">Browse by Category</h3>
+            <p class="text-center text-gray-600 mb-12 text-lg">Explore tools organized by your needs</p>
+            
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <button class="category-pill active px-6 py-3 rounded-full bg-gray-100 text-gray-700 font-semibold shadow-md" data-category="all">
+                    All Tools
+                </button>
+                <button class="category-pill px-6 py-3 rounded-full bg-gray-100 text-gray-700 font-semibold shadow-md" data-category="video-editing">
+                    🎨 Video Editing
+                </button>
+                <button class="category-pill px-6 py-3 rounded-full bg-gray-100 text-gray-700 font-semibold shadow-md" data-category="video-generation">
+                    🎬 Video Generation
+                </button>
+                <button class="category-pill px-6 py-3 rounded-full bg-gray-100 text-gray-700 font-semibold shadow-md" data-category="gaming">
+                    🎮 Gaming
+                </button>
+                <button class="category-pill px-6 py-3 rounded-full bg-gray-100 text-gray-700 font-semibold shadow-md" data-category="audio">
+                    🎵 Audio Tools
+                </button>
+                <button class="category-pill px-6 py-3 rounded-full bg-gray-100 text-gray-700 font-semibold shadow-md" data-category="design">
+                    🎨 Design
+                </button>
+                <button class="category-pill px-6 py-3 rounded-full bg-gray-100 text-gray-700 font-semibold shadow-md" data-category="productivity">
+                    📊 Productivity
+                </button>
+                <button class="category-pill px-6 py-3 rounded-full bg-gray-100 text-gray-700 font-semibold shadow-md" data-category="ai">
+                    🤖 AI Tools
+                </button>
+                <button class="category-pill px-6 py-3 rounded-full bg-gray-100 text-gray-700 font-semibold shadow-md" data-category="development">
+                    💻 Development
+                </button>
+                <button class="category-pill px-6 py-3 rounded-full bg-gray-100 text-gray-700 font-semibold shadow-md" data-category="marketing">
+                    📱 Marketing
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Grid -->
+    <section id="tools" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div id="toolsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tools will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-5xl font-bold text-purple-600 mb-2">500+</div>
+                    <div class="text-gray-600">Total Tools</div>
+                </div>
+                <div>
+                    <div class="text-5xl font-bold text-purple-600 mb-2">15</div>
+                    <div class="text-gray-600">Categories</div>
+                </div>
+                <div>
+                    <div class="text-5xl font-bold text-purple-600 mb-2">50K+</div>
+                    <div class="text-gray-600">Happy Users</div>
+                </div>
+                <div>
+                    <div class="text-5xl font-bold text-purple-600 mb-2">Daily</div>
+                    <div class="text-gray-600">Updates</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i class="fas fa-honeycomb text-2xl"></i>
+                        <h3 class="text-xl font-bold">ToolHive</h3>
+                    </div>
+                    <p class="text-purple-200">Your ultimate directory for discovering the best web tools and resources.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-purple-200">
+                        <li><a href="#" class="hover:text-white transition">Home</a></li>
+                        <li><a href="#" class="hover:text-white transition">Categories</a></li>
+                        <li><a href="#" class="hover:text-white transition">Submit Tool</a></li>
+                        <li><a href="#" class="hover:text-white transition">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Categories</h4>
+                    <ul class="space-y-2 text-purple-200">
+                        <li><a href="#" class="hover:text-white transition">Video Editing</a></li>
+                        <li><a href="#" class="hover:text-white transition">AI Tools</a></li>
+                        <li><a href="#" class="hover:text-white transition">Design</a></li>
+                        <li><a href="#" class="hover:text-white transition">Development</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4 text-2xl">
+                        <a href="#" class="hover:text-purple-200 transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-purple-200 transition"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="hover:text-purple-200 transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-purple-200 transition"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-purple-400 mt-8 pt-8 text-center text-purple-200">
+                <p>&copy; 2024 ToolHive. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tools Database
+        const tools = [
+            // Video Editing
+            {
+                name: "DaVinci Resolve",
+                description: "Professional video editing, color correction, and post-production",
+                category: "video-editing",
+                pricing: "free",
+                icon: "🎬",
+                url: "https://www.blackmagicdesign.com/products/davinciresolve",
+                features: ["Color Grading", "VFX", "Audio Post"]
+            },
+            {
+                name: "Adobe Premiere Pro",
+                description: "Industry-standard video editing software for professionals",
+                category: "video-editing",
+                pricing: "paid",
+                icon: "🎥",
+                url: "https://www.adobe.com/products/premiere.html",
+                features: ["Timeline Editing", "Effects", "Multi-cam"]
+            },
+            {
+                name: "CapCut",
+                description: "Free, easy-to-use video editor for all skill levels",
+                category: "video-editing",
+                pricing: "free",
+                icon: "✂️",
+                url: "https://www.capcut.com/",
+                features: ["Templates", "Effects", "Music Library"]
+            },
+            {
+                name: "Final Cut Pro",
+                description: "Apple's professional video editing software for Mac",
+                category: "video-editing",
+                pricing: "paid",
+                icon: "🍎",
+                url: "https://www.apple.com/final-cut-pro/",
+                features: ["Magnetic Timeline", "Motion Graphics", "360° Video"]
+            },
+            
+            // Video Generation
+            {
+                name: "Runway ML",
+                description: "AI-powered video generation and editing tools",
+                category: "video-generation",
+                pricing: "freemium",
+                icon: "🤖",
+                url: "https://runwayml.com/",
+                features: ["Gen-2", "AI Magic Tools", "Real-time"]
+            },
+            {
+                name: "Synthesia",
+                description: "Create AI videos with digital avatars from text",
+                category: "video-generation",
+                pricing: "paid",
+                icon: "👤",
+                url: "https://www.synthesia.io/",
+                features: ["AI Avatars", "Multi-language", "Custom Branding"]
+            },
+            {
+                name: "Pictory",
+                description: "Turn text into engaging videos automatically",
+                category: "video-generation",
+                pricing: "freemium",
+                icon: "📝",
+                url: "https://pictory.ai/",
+                features: ["Text-to-Video", "Blog to Video", "Auto Captions"]
+            },
+            {
+                name: "Descript",
+                description: "Edit videos by editing text transcripts",
+                category: "video-generation",
+                pricing: "freemium",
+                icon: "📄",
+                url: "https://www.descript.com/",
+                features: ["Transcription", "Overdub", "Screen Recording"]
+            },
+            
+            // Gaming
+            {
+                name: "Steam",
+                description: "Largest digital distribution platform for PC gaming",
+                category: "gaming",
+                pricing: "free",
+                icon: "🎮",
+                url: "https://store.steampowered.com/",
+                features: ["Game Library", "Community", "Workshop"]
+            },
+            {
+                name: "Epic Games Store",
+                description: "Digital video game storefront with free weekly games",
+                category: "gaming",
+                pricing: "free",
+                icon: "🎯",
+                url: "https://www.epicgames.com/store/",
+                features: ["Free Games", "Exclusive Titles", "Cloud Saves"]
+            },
+            {
+                name: "Discord",
+                description: "Communication platform for gamers and communities",
+                category: "gaming",
+                pricing: "free",
+                icon: "💬",
+                url: "https://discord.com/",
+                features: ["Voice Chat", "Communities", "Screen Share"]
+            },
+            {
+                name: "OBS Studio",
+                description: "Free and open-source streaming and recording software",
+                category: "gaming",
+                pricing: "free",
+                icon: "📹",
+                url: "https://obsproject.com/",
+                features: ["Live Streaming", "Recording", "Scene Transitions"]
+            },
+            
+            // Audio Tools
+            {
+                name: "Audacity",
+                description: "Free, open-source audio editing software",
+                category: "audio",
+                pricing: "free",
+                icon: "🎵",
+                url: "https://www.audacityteam.org/",
+                features: ["Multi-track", "Effects", "Analysis"]
+            },
+            {
+                name: "Adobe Audition",
+                description: "Professional audio workstation for mixing and editing",
+                category: "audio",
+                pricing: "paid",
+                icon: "🎚️",
+                url: "https://www.adobe.com/products/audition.html",
+                features: ["Multitrack", "Restoration", "Remix"]
+            },
+            {
+                name: "Splice",
+                description: "Cloud-based music creation and collaboration platform",
+                category: "audio",
+                pricing: "freemium",
+                icon: "🎼",
+                url: "https://splice.com/",
+                features: ["Sample Library", "Plugins", "Collaboration"]
+            },
+            {
+                name: "BandLab",
+                description: "Free online music creation and collaboration tool",
+                category: "audio",
+                pricing: "free",
+                icon: "🎹",
+                url: "https://www.bandlab.com/",
+                features: ["DAW", "Social Features", "Mobile App"]
+            },
+            
+            // Design
+            {
+                name: "Figma",
+                description: "Collaborative interface design tool",
+                category: "design",
+                pricing: "freemium",
+                icon: "🎨",
+                url: "https://www.figma.com/",
+                features: ["Prototyping", "Collaboration", "Design Systems"]
+            },
+            {
+                name: "Canva",
+                description: "Graphic design platform for creating visual content",
+                category: "design",
+                pricing: "freemium",
+                icon: "🖼️",
+                url: "https://www.canva.com/",
+                features: ["Templates", "Brand Kit", "Animation"]
+            },
+            {
+                name: "Adobe Photoshop",
+                description: "Industry-standard image editing and manipulation software",
+                category: "design",
+                pricing: "paid",
+                icon: "🖌️",
+                url: "https://www.adobe.com/products/photoshop.html",
+                features: ["Photo Editing", "Compositing", "Digital Art"]
+            },
+            {
+                name: "Blender",
+                description: "Free and open-source 3D creation suite",
+                category: "design",
+                pricing: "free",
+                icon: "🔮",
+                url: "https://www.blender.org/",
+                features: ["Modeling", "Animation", "Rendering"]
+            },
+            
+            // Productivity
+            {
+                name: "Notion",
+                description: "All-in-one workspace for notes, tasks, and wikis",
+                category: "productivity",
+                pricing: "freemium",
+                icon: "📝",
+                url: "https://www.notion.so/",
+                features: ["Databases", "Templates", "Collaboration"]
+            },
+            {
+                name: "Trello",
+                description: "Visual project management tool using boards and cards",
+                category: "productivity",
+                pricing: "freemium",
+                icon: "📊",
+                url: "https://trello.com/",
+                features: ["Kanban Boards", "Automation", "Integrations"]
+            },
+            {
+                name: "Todoist",
+                description: "Task management app to organize work and life",
+                category: "productivity",
+                pricing: "freemium",
+                icon: "✅",
+                url: "https://todoist.com/",
+                features: ["Tasks", "Projects", "Productivity Tracking"]
+            },
+            {
+                name: "Slack",
+                description: "Business communication platform for teams",
+                category: "productivity",
+                pricing: "freemium",
+                icon: "💼",
+                url: "https://slack.com/",
+                features: ["Channels", "Integrations", "Video Calls"]
+            },
+            
+            // AI Tools
+            {
+                name: "ChatGPT",
+                description: "Advanced AI chatbot for conversations and content creation",
+                category: "ai",
+                pricing: "freemium",
+                icon: "🤖",
+                url: "https://chat.openai.com/",
+                features: ["Conversation", "Writing", "Coding"]
+            },
+            {
+                name: "Midjourney",
+                description: "AI art generator creating images from text descriptions",
+                category: "ai",
+                pricing: "paid",
+                icon: "🎨",
+                url: "https://www.midjourney.com/",
+                features: ["Text-to-Image", "High Quality", "Art Styles"]
+            },
+            {
+                name: "Copy.ai",
+                description: "AI-powered copywriting and content generation tool",
+                category: "ai",
+                pricing: "freemium",
+                icon: "✍️",
+                url: "https://www.copy.ai/",
+                features: ["Marketing Copy", "Blog Posts", "Social Media"]
+            },
+            {
+                name: "Jasper",
+                description: "AI content platform for enterprise marketing teams",
+                category: "ai",
+                pricing: "paid",
+                icon: "💎",
+                url: "https://www.jasper.ai/",
+                features: ["Long-form Content", "Templates", "Brand Voice"]
+            },
+            
+            // Development
+            {
+                name: "GitHub",
+                description: "Code hosting platform for version control and collaboration",
+                category: "development",
+                pricing: "freemium",
+                icon: "🐙",
+                url: "https://github.com/",
+                features: ["Git Hosting", "CI/CD", "Code Review"]
+            },
+            {
+                name: "VS Code",
+                description: "Free source-code editor with extensive extension support",
+                category: "development",
+                pricing: "free",
+                icon: "💻",
+                url: "https://code.visualstudio.com/",
+                features: ["IntelliSense", "Debugging", "Extensions"]
+            },
+            {
+                name: "Vercel",
+                description: "Platform for frontend developers to deploy web applications",
+                category: "development",
+                pricing: "freemium",
+                icon: "▲",
+                url: "https://vercel.com/",
+                features: ["Instant Deployment", "Edge Network", "Analytics"]
+            },
+            {
+                name: "Postman",
+                description: "API platform for building and testing APIs",
+                category: "development",
+                pricing: "freemium",
+                icon: "📮",
+                url: "https://www.postman.com/",
+                features: ["API Testing", "Documentation", "Collaboration"]
+            },
+            
+            // Marketing
+            {
+                name: "Mailchimp",
+                description: "Email marketing and automation platform",
+                category: "marketing",
+                pricing: "freemium",
+                icon: "📧",
+                url: "https://mailchimp.com/",
+                features: ["Email Campaigns", "Automation", "Analytics"]
+            },
+            {
+                name: "Hootsuite",
+                description: "Social media management platform",
+                category: "marketing",
+                pricing: "freemium",
+                icon: "📱",
+                url: "https://www.hootsuite.com/",
+                features: ["Scheduling", "Analytics", "Team Collaboration"]
+            },
+            {
+                name: "Google Analytics",
+                description: "Web analytics service for tracking website traffic",
+                category: "marketing",
+                pricing: "free",
+                icon: "📊",
+                url: "https://analytics.google.com/",
+                features: ["Traffic Analysis", "Conversion Tracking", "Reports"]
+            },
+            {
+                name: "Buffer",
+                description: "Social media management tool for scheduling posts",
+                category: "marketing",
+                pricing: "freemium",
+                icon: "📅",
+                url: "https://buffer.com/",
+                features: ["Post Scheduling", "Analytics", "Team Features"]
+            }
+        ];
+
+        // Render tools
+        function renderTools(filteredTools) {
+            const toolsGrid = document.getElementById('toolsGrid');
+            toolsGrid.innerHTML = '';
+            
+            filteredTools.forEach((tool, index) => {
+                const pricingBadge = tool.pricing === 'free' ? 'badge-free' : 
+                                     tool.pricing === 'paid' ? 'badge-paid' : 'badge-freemium';
+                const pricingText = tool.pricing.charAt(0).toUpperCase() + tool.pricing.slice(1);
+                
+                const toolCard = `
+                    <div class="tool-card card-hover fade-in" style="animation-delay: ${index * 0.05}s">
+                        <div class="p-6">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="text-5xl">${tool.icon}</div>
+                                <span class="${pricingBadge} text-white text-xs font-bold px-3 py-1 rounded-full">
+                                    ${pricingText}
+                                </span>
+                            </div>
+                            <h4 class="text-2xl font-bold mb-2 text-gray-800">${tool.name}</h4>
+                            <p class="text-gray-600 mb-4">${tool.description}</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                ${tool.features.map(feature => `
+                                    <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">
+                                        ${feature}
+                                    </span>
+                                `).join('')}
+                            </div>
+                            <a href="${tool.url}" target="_blank" class="block w-full text-center gradient-bg text-white py-3 rounded-lg font-semibold hover:opacity-90 transition">
+                                Visit Website <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                `;
+                toolsGrid.innerHTML += toolCard;
+            });
+        }
+
+        // Category filtering
+        const categoryButtons = document.querySelectorAll('.category-pill');
+        let currentCategory = 'all';
+
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                currentCategory = button.dataset.category;
+                
+                const filtered = currentCategory === 'all' 
+                    ? tools 
+                    : tools.filter(tool => tool.category === currentCategory);
+                
+                renderTools(filtered);
+            });
+        });
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const filtered = tools.filter(tool => {
+                const matchesSearch = tool.name.toLowerCase().includes(searchTerm) ||
+                                     tool.description.toLowerCase().includes(searchTerm) ||
+                                     tool.features.some(f => f.toLowerCase().includes(searchTerm));
+                const matchesCategory = currentCategory === 'all' || tool.category === currentCategory;
+                return matchesSearch && matchesCategory;
+            });
+            renderTools(filtered);
+        });
+
+        // Initial render
+        renderTools(tools);
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+```<!-- Disclaimer Section -->
+<section class="disclaimer">
+  <h3>Disclaimer</h3>
+  <p>
+    This website is an independent informational and comparison platform. We do not own,
+    operate, control, or have any formal affiliation with any third-party websites, services,
+    companies, or brands referenced or linked on this site, unless explicitly stated otherwise.
+  </p>
+  <p>
+    All trademarks, logos, brand names, and services mentioned belong to their respective
+    owners and are used solely for identification and informational purposes. Any descriptions,
+    opinions, or evaluations provided are our own and are based on publicly available information
+    and/or independent analysis.
+  </p>
+  <p>
+    Links to third-party websites are provided for convenience only. We do not endorse,
+    guarantee, or assume responsibility for the content, accuracy, availability, pricing,
+    or practices of any external websites or services.
+  </p>
+  <p>
+    Use of any third-party website or service is at the user’s own discretion and risk.
+    Users are encouraged to review the terms, policies, and conditions of any third-party
+    services before engaging with them.
+  </p>
+</section>
+</html>
